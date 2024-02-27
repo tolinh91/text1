@@ -1,4 +1,4 @@
-"""
+
 Problems
 Làm bài toán nhận diện chữ in hoa viết tay từ A-Z
 Nguồn dữ liệu
@@ -12,4 +12,3 @@ Tool sử dụng
 sử dụng layer như nào? Bao nhiêu layer?
 Add API nếu có
 
-"""
