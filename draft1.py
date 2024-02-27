@@ -1,7 +1,20 @@
-# import các thư viện cần thiết
+# Import thư viện
+
 import numpy as np
 import csv
 import matplotlib.pyplot as plt
+
+import tensorflow as tf
+import tflearn
+from tflearn.layers.conv import conv_2d, max_pool_2d
+from tflearn.layers.core import input_data, dropout, fully_connected
+from tflearn.layers import regression
+from tflearn.data_utils import to_categorical
+import tensorflow.compat.v1 as tf
+tf.compat.v1.disable_v2_behavior()
+tf.compat.v1.summary.merge()
+tf.logging.set_verbosity(tf.logging.ERROR)
+import random
 
 # đọc dữ liệu
 with open('A.csv', 'r') as csv_file:
@@ -38,7 +51,7 @@ print(len(train_label))
 
 #result: 56081
 
-import random
+
 
 shuffle_order = list(range(56081))
 random.shuffle(shuffle_order)
@@ -59,16 +72,7 @@ val_y = train_label[50000:53000]
 test_x = train_data[53000:]
 test_y = train_label[53000:]
 
-import tensorflow as tf
-import tflearn
-from tflearn.layers.conv import conv_2d, max_pool_2d
-from tflearn.layers.core import input_data, dropout, fully_connected
-from tflearn.layers import regression
-from tflearn.data_utils import to_categorical
-import tensorflow.compat.v1 as tf
-tf.compat.v1.disable_v2_behavior()
-tf.compat.v1.summary.merge()
-tf.logging.set_verbosity(tf.logging.ERROR)
+
 
 BATCH_SIZE = 32
 IMG_SIZE = 28
