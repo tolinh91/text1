@@ -16,12 +16,12 @@ tf.compat.v1.summary.merge()
 tf.logging.set_verbosity(tf.logging.ERROR)
 import random
 
-# đọc dữ liệu
+# Read Data set
 with open('A.csv', 'r') as csv_file:
     result = csv.reader(csv_file)
     rows = []
     
-    # đọc từng dòng của file và thêm vào list rows, mỗi phần tử của list là một dòng
+    # Create a new list "rows" với mỗi entry trong list là một row
     for row in result:
         rows.append(row)
 print(rows[100000])
@@ -35,9 +35,10 @@ print(letter)
 plt.imshow(x)
 
 
-train_data = [] # dữ liệu training
-train_label = [] # label của chúng
+train_data = [] # Tạo list rỗng để chứa training data
+train_label = [] # Tạo list rỗng để chứa label của training data
 
+# In ra số lượng ảnh??????????/
 for letter in rows:
     if (letter[0] == '0') or (letter[0] == '1') or (letter[0] == '2') or (letter[0] == '3'):
         x = np.array([int(j) for j in letter[1:]])
@@ -76,7 +77,8 @@ test_y = train_label[53000:]
 
 BATCH_SIZE = 32
 IMG_SIZE = 28
-N_CLASSES = 4
+N_CLA
+
 LR = 0.001
 N_EPOCHS = 50
 
